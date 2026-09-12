@@ -115,7 +115,7 @@ getgenv().ExunysDeveloperAimbot = {
 	Triggerbot = {
 		Enabled = false,
 
-		TeamCheck = true,
+		TeamCheck = false,
 		AliveCheck = true,
 		AimLockedCheck = false,
 
