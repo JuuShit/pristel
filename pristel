@@ -119,7 +119,7 @@ getgenv().ExunysDeveloperAimbot = {
 		AliveCheck = true,
 		AimLockedCheck = false,
 
-		Delay = 0 -- Time it takes for the trigger bot to react / click (seconds).
+		Delay = 0.5 -- Time it takes for the trigger bot to react / click (seconds).
 	},
 
 	ClosestPlayerTracer = {
