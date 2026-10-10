@@ -496,3 +496,32 @@ Environment.Load = Load -- ExunysDeveloperAimbot.Load()
 setmetatable(Environment, {__call = Load})
 
 return Environment
+
+local function IsVisible(origin, targetPart)
+    local direction = targetPart.Position - origin
+
+    local params = RaycastParams.new()
+    params.FilterType = Enum.RaycastFilterType.Exclude
+
+    local result = workspace:Raycast(
+        origin,
+        direction,
+        params
+    )
+
+    return result ~= nil
+        and result.Instance:IsDescendantOf(targetPart.Parent)
+end
+
+-- Contoh penggunaan:
+local camera = workspace.CurrentCamera
+local npc = workspace:FindFirstChild("NPC")
+
+if npc and npc:FindFirstChild("HumanoidRootPart") then
+    local visible = IsVisible(
+        camera.CFrame.Position,
+        npc.HumanoidRootPart
+    )
+
+    print(visible and "Terlihat" or "Terhalang")
+end
